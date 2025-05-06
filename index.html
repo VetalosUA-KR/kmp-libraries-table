@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated KMP and Compose Multiplatform Libraries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Категорія</th>
+                <th>Бібліотека</th>
+                <th>Призначення</th>
+                <th>Підтримувані платформи</th>
+                <th>Документація</th>
+                <th>Примітки</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Мережа</td>
+                <td>Ktor</td>
+                <td>Асинхронний HTTP-клієнт для REST API, WebSocket, JSON-серіалізації</td>
+                <td>Android, iOS, JVM, JS, Native</td>
+                <td><a href="https://ktor.io/docs/client.html" target="_blank">Ktor Documentation</a></td>
+                <td>Основний вибір для KMP, підтримує платформозалежні клієнти (OkHttp, Darwin)</td>
+            </tr>
+            <tr>
+                <td>Мережа</td>
+                <td>Ktorfit</td>
+                <td>Обгортка над Ktor із синтаксисом, схожим на Retrofit</td>
+                <td>Android, iOS, JVM, JS, Native</td>
+                <td><a href="https://github.com/Foso/Ktorfit" target="_blank">Ktorfit GitHub</a></td>
+                <td>Спрощує створення типізованих API, зручна для Retrofit-користувачів</td>
+            </tr>
+            <tr>
+                <td>Мережа/Серіалізація</td>
+                <td>Kotlinx Serialization</td>
+                <td>Серіалізація/десеріалізація JSON та інших форматів</td>
+                <td>Android, iOS, JVM, JS, Native</td>
+                <td><a href="https://github.com/Kotlin/kotlinx.serialization" target="_blank">Kotlinx Serialization</a></td>
+                <td>Інтегрується з Ktor, стандарт для KMP</td>
+            </tr>
+            <tr>
+                <td>Локальне зберігання</td>
+                <td>DataStore</td>
+                <td>Зберігання даних у форматі ключ-значення або протоколів буферів</td>
+                <td>Android, iOS (з шляхами)</td>
+                <td><a href="https://developer.android.com/topic/libraries/architecture/datastore" target="_blank">Jetpack DataStore</a></td>
+                <td>Асинхронний API, потребує налаштування шляхів для iOS</td>
+            </tr>
+            <tr>
+                <td>Локальне зберігання</td>
+                <td>Multiplatform Settings</td>
+                <td>Зберігання простих даних через NSUserDefaults/SharedPreferences</td>
+                <td>Android, iOS, Native</td>
+                <td><a href="https://github.com/russhwolf/multiplatform-settings" target="_blank">Multiplatform Settings</a></td>
+                <td>Легка, для налаштувань або токенів</td>
+            </tr>
+            <tr>
+                <td>Впровадження залежностей</td>
+                <td>Koin</td>
+                <td>Легке впровадження залежностей (Dependency Injection)</td>
+                <td>Android, iOS, JVM, JS, Native</td>
+                <td><a href="https://insert-koin.io/" target="_blank">Koin</a></td>
+                <td>Простіша альтернатива Dagger/Hilt, платформозалежні модулі</td>
+            </tr>
+            <tr>
+                <td>Навігація</td>
+                <td>Voyager</td>
+                <td>Навігація для Compose Multiplatform</td>
+                <td>Android, iOS, Desktop, Web</td>
+                <td><a href="https://github.com/adrielcafe/voyager" target="_blank">Voyager</a></td>
+                <td>Зручний API для управління стеком екранів у Compose</td>
+            </tr>
+            <tr>
+                <td>Асинхронність</td>
+                <td>Kotlin Coroutines</td>
+                <td>Асинхронне програмування для потоків, мережі, локальних операцій</td>
+                <td>Android, iOS, JVM, JS, Native</td>
+                <td><a href="https://kotlinlang.org/docs/coroutines-guide.html" target="_blank">Kotlin Coroutines</a></td>
+                <td>Вбудована в Kotlin, основа для Ktor, DataStore тощо</td>
+            </tr>
+            <tr>
+                <td>UI-компоненти</td>
+                <td>Compose Multiplatform UI Kit</td>
+                <td>Готові UI-компоненти для Compose (Material Design)</td>
+                <td>Android, iOS, Desktop, Web</td>
+                <td><a href="https://play.google.com/store/apps/details?id=com.compose.multiplatform.ui.kit" target="_blank">Compose UI Kit</a></td>
+                <td>Понад 300 компонентів, підтримка темного режиму</td>
+            </tr>
+            <tr>
+                <td>Аналітика</td>
+                <td>Amplitude</td>
+                <td>Аналітика подій у додатку</td>
+                <td>Android, iOS</td>
+                <td><a href="https://www.amplitude.com/docs/sdks/kotlin-sdk" target="_blank">Amplitude SDK</a></td>
+                <td>Використовуйте через платформозалежні SDK</td>
+            </tr>
+            <tr>
+                <td>Аналітика</td>
+                <td>AppsFlyer</td>
+                <td>Аналітика маркетингу, відстеження встановлень і подій</td>
+                <td>Android, iOS</td>
+                <td><a href="https://dev.appsflyer.com/hc/docs/kotlin-android-sdk" target="_blank">AppsFlyer SDK</a></td>
+                <td>Потребує платформозалежної інтеграції, підходить для маркетингових кампаній</td>
+            </tr>
+            <tr>
+                <td>Пуш-повідомлення</td>
+                <td>Firebase Cloud Messaging</td>
+                <td>Пуш-повідомлення для Android та iOS</td>
+                <td>Android, iOS</td>
+                <td><a href="https://firebase.google.com/docs/cloud-messaging" target="_blank">Firebase</a></td>
+                <td>Потребує платформозалежного налаштування</td>
+            </tr>
+            <tr>
+                <td>Інтеграція iOS</td>
+                <td>SKIE</td>
+                <td>Покращення інтероперабельності між Kotlin і Swift</td>
+                <td>iOS</td>
+                <td><a href="https://skie.touchlab.co/" target="_blank">SKIE Documentation</a></td>
+                <td>Допомагає інтегрувати KMP-код із Swift на iOS</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
